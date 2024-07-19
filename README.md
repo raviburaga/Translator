@@ -1,4 +1,4 @@
-Thank you for sharing the GitHub repository link. Based on your project details, here's an updated README file reflecting the technologies used and the structure of your Translator application:
+
 
 ---
 
