@@ -7,11 +7,11 @@ import './App.css'; // For additional custom styles if needed
 
 const App = () => {
   const [translatedText, setTranslatedText] = useState('');
-  const [detectedLanguage, setDetectedLanguage] = useState('');
+  
 
   const handleTranslation = async (text, targetLang) => {
     try {
-      const response = await fetch('http://localhost:3001/translate', {
+      const response = await fetch('https://backend-translator.onrender.com/translate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -30,23 +30,7 @@ const App = () => {
     }
   };
 
-  const handleLanguageDetection = async (text) => {
-    try {
-      const response = await fetch('http://localhost:3001/detect', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ text })
-      });
 
-      const data = await response.json();
-      setDetectedLanguage(data.detected_language);
-
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
 
   return (
     <div className="App min-h-screen bg-custom-bg bg-cover flex flex-col items-center p-12">
